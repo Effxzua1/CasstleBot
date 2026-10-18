@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casstle Bot · Moderación, tickets, comandos y ayuda para Discord</title>
+<meta name="description" content="Casstle Bot: moderación, protección anti-raid, tickets, economía, música y planes Premium para tu servidor de Discord.">
+<meta name="theme-color" content="#050a16">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Casstle Bot · Moderación, tickets y más para Discord">
+<meta property="og:description" content="Moderación, anti-raid, tickets, economía y música en un solo bot.">
+<link rel="icon" href="assets/img/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Unbounded:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="intro" role="dialog" aria-label="Presentación de Casstle Bot">
+  <div class="i-curtain l"></div><div class="i-curtain r"></div>
+  <div class="i-spark" id="iSpark" aria-hidden="true"></div>
+  <div class="i-core">
+    <div class="i-glow" aria-hidden="true"></div>
+    <div class="i-logo"><i class="ring"></i><i class="ring"></i><img src="assets/img/favicon.jpg" alt=""></div>
+    <p class="i-hello" id="iHello"></p>
+    <div class="i-title" id="iTitle" aria-label="Casstle Bot"></div>
+    <p class="i-tag" id="iTag"></p>
+    <div class="i-bar"><i></i></div>
+  </div>
+  <button class="i-skip" id="iSkip" type="button">Saltar</button>
+</div>
+<div class="top"><div class="top-in">
+  <a class="brand" href="#"><img src="assets/img/favicon.jpg" alt=""><span>Casstle</span></a>
+  <nav class="menu" aria-label="Principal">
+    <a href="#comandos">Comandos</a><a href="#ayuda">Ayuda</a><a href="#tickets">Tickets</a><a href="#premium">Premium</a><a href="#servidores">Servidores</a><a href="#faq">Preguntas</a>
+  </nav>
+  <a class="btn primary sm" data-link="invite" target="_blank" rel="noopener">Invitar</a>
+</div></div>
+
+<header class="hero">
+  <div class="bg" id="bg"></div><div class="shade"></div><div class="petals" id="petals"></div>
+  <div>
+    <div class="logo"><img src="assets/img/favicon.jpg" alt="Logo de Casstle Bot"></div>
+    <div class="badge stg" style="--i:0" id="live"><span class="dot"></span><span id="liveTxt">Cifras guardadas</span></div>
+    <h1 class="stg" style="--i:1"><b class="shine">CASSTLE</b> <span>BOT</span></h1>
+    <p class="lead stg" style="--i:2">Moderación, protección, tickets, economía y música en un solo bot para tu servidor de Discord.</p>
+    <div class="cta stg" style="--i:3">
+      <a class="btn primary" data-link="invite" target="_blank" rel="noopener">Invitar al bot</a>
+      <a class="btn" href="#ayuda">Cómo empezar</a>
+    </div>
+    <div class="demo stg" style="--i:4" role="img" aria-label="Ejemplo de un comando de Casstle en Discord">
+      <div class="dl"><b>Tú</b><span><span id="typed"></span><i class="caret"></i></span></div>
+      <div class="dl bot" id="reply"><img src="assets/img/favicon.jpg" alt=""><div><b>Casstle <em>BOT</em></b><span id="replyTxt"></span></div></div>
+      <img id="shot" class="shot" src="assets/img/ban-example.jpg" alt="Respuesta real de Casstle al comando !ban"><small id="cap">Ejemplo ilustrativo</small>
+    </div>
+    <div class="chips stg" style="--i:5"><span>Gratis</span><span>Español, English y Français</span><span>Slash y prefijo</span></div>
+  </div>
+</header>
+
+<div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+<section id="stats" class="reveal"><div class="wrap">
+  <div class="stats">
+    <div class="stat"><b data-k="users">0</b><small>Usuarios</small></div>
+    <div class="stat"><b data-k="servers">0</b><small>Servidores</small></div>
+    <div class="stat"><b data-k="commands">0</b><small>Comandos</small></div>
+  </div>
+  <div class="feat" id="feat"></div>
+</div></section>
+
+<section id="comandos" class="alt reveal"><div class="wrap">
+  <h2>Todos los comandos</h2>
+  <p class="sub"><b id="cmdTotal"></b> comandos organizados por categoría. Toca uno para copiarlo.</p>
+  <div class="cbar"><input id="q" type="search" placeholder="Buscar un comando" aria-label="Buscar un comando" autocomplete="off"><div class="tabs" id="tabs" role="tablist"></div></div>
+  <div id="cmdOut"></div>
+  <p class="hint">El prefijo por defecto es <code>!</code> y se cambia con <code>!prefix</code>. Muchos comandos también funcionan como comandos slash.</p>
+</div></section>
+
+<section id="ayuda" class="reveal"><div class="wrap">
+  <h2>Centro de ayuda</h2>
+  <p class="sub">Empieza en cuatro pasos y configura lo básico en minutos.</p>
+  <ol class="steps">
+    <li><b>Invita a Casstle</b><span>Usa el botón de invitar y elige tu servidor.</span></li>
+    <li><b>Mira los comandos</b><span>Escribe <code>!help</code> para verlos por categoría.</span></li>
+    <li><b>Configura lo básico</b><span>Prueba <code>!welcome</code>, <code>!protection</code> y <code>!tickets</code>.</span></li>
+    <li><b>Pide ayuda</b><span>Si algo no sale, abre un ticket en el servidor de soporte.</span></li>
+  </ol>
+  <h3 class="gh">Guías rápidas</h3>
+  <div class="guides" id="guides"></div>
+  <div class="cta" style="margin-top:34px;justify-content:flex-start"><a class="btn primary" data-link="support" target="_blank" rel="noopener">Hablar con soporte</a><a class="btn" href="#faq">Ver preguntas frecuentes</a></div>
+</div></section>
+
+<section id="tickets" class="alt reveal"><div class="wrap split">
+  <div>
+    <h2>Sistema de tickets</h2>
+    <p class="sub" style="margin-bottom:0">Tus miembros abren un ticket con un botón y tu staff lo atiende en un canal privado. Todo se configura desde un panel con <code>!tickets</code>.</p>
+    <ul class="checks">
+      <li>Panel con botones y textos que tú personalizas</li>
+      <li>Varios tipos de ticket en un mismo panel</li>
+      <li>El staff puede reclamar y cerrar cada ticket, con confirmación</li>
+      <li>Los botones siguen funcionando después de reiniciar el bot</li>
+    </ul>
+  </div>
+  <div>
+    <div class="mock" aria-label="Ejemplo de panel de tickets">
+      <div class="who"><img src="assets/img/favicon.jpg" alt="">Casstle<em>BOT</em></div>
+      <div class="emb"><h4>Centro de ayuda</h4><p>Elige una opción para abrir un ticket con el equipo.</p>
+        <div class="mb"><span>Soporte</span><span>Reportar</span><span>Compras</span></div></div>
+    </div>
+    <p class="sec-note">Ejemplo del panel. Los nombres y textos son editables.</p>
+  </div>
+</div></section>
+
+<section id="premium" class="reveal"><div class="wrap">
+  <h2>Planes Premium</h2>
+  <p class="sub">Funciones extra para usuarios que quieren más control. El bot y sus comandos principales son gratis. Mira todos los planes con <code>!tiers</code>.</p>
+  <div class="toggle" role="group" aria-label="Duración">
+    <button id="pm" aria-pressed="true">1 mes</button><button id="p3" aria-pressed="false">3 meses</button>
+  </div>
+  <div class="tiers" id="tiers"></div>
+  <p class="hint">Para comprar o activar un plan, abre el <a href="#" data-link="support" target="_blank" rel="noopener" style="color:var(--sky);text-decoration:underline">servidor de soporte</a>.</p>
+</div></section>
+
+<section id="servidores" class="alt reveal"><div class="wrap center">
+  <h2>Servidores donde está Casstle</h2>
+  <p class="sub">Comunidades que ya lo usan. Entra y míralo funcionando.</p>
+  <div class="servers" id="servers"></div>
+  <p class="more" id="more"></p>
+</div></section>
+
+<section id="faq" class="reveal"><div class="wrap center">
+  <h2>Preguntas frecuentes</h2>
+  <p class="sub">Lo que más nos preguntan antes de invitar a Casstle.</p>
+  <div class="faq" id="faqList" style="text-align:left"></div>
+</div></section>
+
+<section class="final reveal"><div class="wrap center">
+  <h2>Lleva Casstle a tu servidor</h2>
+  <p class="sub">Invítalo en un clic. Si tienes dudas, el soporte te ayuda.</p>
+  <div class="cta"><a class="btn primary" data-link="invite" target="_blank" rel="noopener">Invitar al bot</a><a class="btn" data-link="support" target="_blank" rel="noopener">Ir al soporte</a></div>
+</div></section>
+<footer><nav><a href="#comandos">Comandos</a><a href="#ayuda">Ayuda</a><a href="#premium">Premium</a><a href="#faq">Preguntas</a></nav>Casstle Bot no está afiliado a Discord Inc.<br><button id="replay" class="linkbtn" type="button">Ver presentación</button></footer>
+<div id="lb" hidden><img alt=""><button type="button">Cerrar</button></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
